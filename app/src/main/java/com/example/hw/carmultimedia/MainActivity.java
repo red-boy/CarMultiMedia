@@ -3,9 +3,11 @@ package com.example.hw.carmultimedia;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
 import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
 
@@ -26,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
     private void initMenus() {
         ImageView menuimg = (ImageView) findViewById(R.id.menu_img);
         SubActionButton.Builder rLSubBuilder = new SubActionButton.Builder(this);
-        ImageView rlIcon1 = new ImageView(this);
 
 
         ImageView imagMusi = new ImageView(this);
@@ -35,16 +36,19 @@ public class MainActivity extends AppCompatActivity {
         ImageView imagExit = new ImageView(this);
 
 
-//        rlIcon1.setImageDrawable(getResources().getDrawable(R.drawable.action_edit_light));
-        imagMusi.setImageDrawable(getResources().getDrawable(R.drawable.regist_smile_green));
-        imagPicture.setImageDrawable(getResources().getDrawable(R.drawable.m_btn_pic_normal));
+        imagMusi.setImageDrawable(getResources().getDrawable(R.drawable.m_btn_music_zoom));
+        imagPicture.setImageDrawable(getResources().getDrawable(R.drawable.m_btn_pic_zoom));
         imagVideo.setImageDrawable(getResources().getDrawable(R.drawable.m_btn_video_zoom));
         imagExit.setImageDrawable(getResources().getDrawable(R.drawable.abc_ic_clear_search_api_holo_light));
 
-        SubActionButton rlSub1 = rLSubBuilder.setContentView(imagMusi).build();
-        SubActionButton rlSub2 = rLSubBuilder.setContentView(imagPicture).build();
-        SubActionButton rlSub3 = rLSubBuilder.setContentView(imagVideo).build();
-        SubActionButton rlSub4 = rLSubBuilder.setContentView(imagExit).build();
+        SubActionButton rlSub1 = rLSubBuilder.setContentView(imagMusi).setLayoutParams(new FloatingActionButton.LayoutParams(72, 72, Gravity.CENTER))
+                .build();
+        SubActionButton rlSub2 = rLSubBuilder.setContentView(imagPicture).setLayoutParams(new FloatingActionButton.LayoutParams(72, 72, Gravity.CENTER))
+                .build();
+        SubActionButton rlSub3 = rLSubBuilder.setContentView(imagVideo).setLayoutParams(new FloatingActionButton.LayoutParams(72, 72, Gravity.CENTER))
+                .build();
+        SubActionButton rlSub4 = rLSubBuilder.setContentView(imagExit).setLayoutParams(new FloatingActionButton.LayoutParams(72, 72, Gravity.CENTER))
+                .build();
    /*     rlIcon1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
         floatingActionMenu = new FloatingActionMenu.Builder(this)
                 .setStartAngle(180)//设置扩展菜单的开始结束位置
-                .setEndAngle(270)
+                .setEndAngle(280)
                 .addSubActionView(rlSub1)
                 .addSubActionView(rlSub2)
                 .addSubActionView(rlSub3)
