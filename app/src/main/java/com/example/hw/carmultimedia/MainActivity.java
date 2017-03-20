@@ -1,12 +1,15 @@
 package com.example.hw.carmultimedia;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.example.hw.carmultimedia.music_module.activity.MainContentActivity;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionButton;
 import com.oguzdev.circularfloatingactionmenu.library.FloatingActionMenu;
 import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
@@ -60,7 +63,8 @@ public class MainActivity extends AppCompatActivity {
         imagMusi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("MainActivity", "imagMusi点击");
+                Toast.makeText(MainActivity.this, "imagMusi点击，跳转", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, MainContentActivity.class));
             }
         });
 

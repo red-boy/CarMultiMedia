@@ -1,1 +1,1 @@
-include ':app', ':samples', ':library'
+include ':app', ':samples', ':library', ':musicview', 'slidingmenu'
